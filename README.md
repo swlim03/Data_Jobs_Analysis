@@ -26,7 +26,7 @@ To focus the analysis on the Malaysia job market, the dataset is filtered to inc
 
 # The Analysis
 ## Exploratory Data Analysis
-Notebook for detailed steps: [1_EDA.ipynb](Data%20Jobs\1_EDA.ipynb)
+Notebook for detailed steps: [1_EDA.ipynb](Data%20Jobs/1_EDA.ipynb)
 
 Number of Data Roles in Malaysia
 ```python
@@ -40,7 +40,7 @@ plt.title('Malaysia: Number of Jobs per Title', fontweight='bold')
 plt.xlabel('Number of Jobs')
 plt.ylabel('')
 ```
-![Visualization of Top Data Roles in Malaysia](Data%20Jobs\Image\Roles_Count_MY.png)
+![Visualization of Top Data Roles in Malaysia](Data%20Jobs/Image/Roles_Count_MY.png)
 
 Companies with Most Data Roles in Malaysia
 ```python
@@ -54,10 +54,10 @@ plt.xlabel('Number of Jobs')
 plt.ylabel('')
 sns.despine()
 ```
-![Visualization of Top Companies for Data Roles in Malaysia](Data%20Jobs\Image\Companies_Malaysia.png)
+![Visualization of Top Companies for Data Roles in Malaysia](Data%20Jobs/Image/Companies_Malaysia.png)
 
 ## 1. What are the most demanded skills for Top 3 Data Roles?
-Notebook for detailed steps: [2_Skill_Demand.ipynb](Data%20Jobs\2_Skill_Demand.ipynb)
+Notebook for detailed steps: [2_Skill_Demand.ipynb](Data%20Jobs/2_Skill_Demand.ipynb)
 
 Top Skills for Data Roles in Malaysia
 ```python
@@ -83,10 +83,15 @@ for i, job_title in enumerate(top3_job_titles):
 fig.suptitle('Percentage of Skills Requested in Malaysia Job Postings', fontsize=13)
 fig.tight_layout(h_pad=0.8)
 ```
-![Visualization of Top Skills MY](Data%20Jobs\Image\TopRoles_Skills_Percent.png)
+![Visualization of Top Skills MY](Data%20Jobs/Image/TopRoles_Skills_Percent.png)
+
+### Insights:
+- SQL is the most requested skill for Data Analysts and Data Scientists, with it in over half the job postings for both roles. For Data Engineers, Python is the most sought-after skill, appearing in 68% of job postings.
+- Data Engineers require more specialized technical skills (AWS, Azure, Spark) compared to Data Analysts and Data Scientists who are expected to be proficient in more general data management and analysis tools (Excel, Tableau).
+- Python is a versatile skill, highly demanded across all three roles, but most prominently for Data Scientists (72%) and Data Engineers (65%).
 
 ## 2. How are in-demand skills trending for Data Analyst?
-Notebook for detailed steps: [3_Skill_Trend.ipynb](Data%20Jobs\3_Skill_Trend.ipynb)
+Notebook for detailed steps: [3_Skill_Trend.ipynb](Data%20Jobs/3_Skill_Trend.ipynb)
 
 In-demand Skills Trend by Month 
 ```python
@@ -105,12 +110,32 @@ plt.gca().yaxis.set_major_formatter(PercentFormatter(decimals=0))
 for i in range(5):
     plt.text(12.5, df_plot.iloc[-1, i], df_plot.columns[i], color='black')
 ```
-![Visualization of Skills Trend](Data%20Jobs\Image\Skills_Trend_Month.png)
+![Visualization of Skills Trend](Data%20Jobs/Image/Skills_Trend_Month.png)
+
+### Insights:
+- SQL remains the most consistently demanded skill throughout the year, although it shows a gradual decrease in demand.
+- Excel experienced a significant increase in demand starting around September, surpassing both Python and Tableau by the end of the year.
+- Both Python and Tableau show relatively stable demand throughout the year with some fluctuations but remain essential skills for data analysts. Power BI, while less demanded compared to the others, shows a slight upward trend towards the year's end.
 
 ## 3. How well do jobs and skills pay for Data Analyst? 
-Notebook for detailed steps: [4_Salary_Analysis.ipynb](Data%20Jobs\4_Salary_Analysis.ipynb)
+Notebook for detailed steps: [4_Salary_Analysis.ipynb](Data%20Jobs/4_Salary_Analysis.ipynb)
 
-Top Paid Skills and In-demand Skills Pay
+Salary of Top 5 Data Roles in Malaysia & Singapore
+```python
+sns.boxplot(data=df_top5_my_sg, x='salary_year_avg', y='job_title_short', order=job_order_my_sg)
+sns.set_theme(style='ticks')
+sns.despine()
+
+plt.title('Salary Distributions of Data Jobs in Malaysia & Singapore')
+plt.xlabel('Yearly Salary (USD)')
+plt.ylabel('')
+plt.xlim(0, 250000) 
+ticks_x = plt.FuncFormatter(lambda y, pos: f'${int(y/1000)}K')
+plt.gca().xaxis.set_major_formatter(ticks_x)
+```
+![Visualization of Salary Distribution](Data%20Jobs/Image/Salary_Boxplot.png)
+
+Top Paid Skills and In-demand Skills Pay in Malaysia
 ```python
 fig, ax = plt.subplots(2, 1)  
 
@@ -136,10 +161,15 @@ ax[1].xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'${int(x/1000)}K
 
 plt.tight_layout()
 ```
-![Visualization of Skills and Pay](Data%20Jobs\Image\Skills_Pay.png)
+![Visualization of Skills and Pay](Data%20Jobs/Image/Skills_Pay.png)
+
+### Insights:
+- The top graph shows specialized technical skills like `dplyr`, `Bitbucket`, and `Gitlab` are associated with higher salaries, some reaching up to $200K, suggesting that advanced technical proficiency can increase earning potential.
+- The bottom graph highlights that foundational skills like `Excel`, `PowerPoint`, and `SQL` are the most in-demand, even though they may not offer the highest salaries. This demonstrates the importance of these core skills for employability in data analysis roles.
+- There's a clear distinction between the skills that are highest paid and those that are most in-demand. Data analysts aiming to maximize their career potential should consider developing a diverse skill set that includes both high-paying specialized skills and widely demanded foundational skills.
 
 ## 4. What is the most optimal skill to learn for Data Analyst? (High Demand AND High Paying)
-Notebook for detailed steps: [5_Optimal_Skills.ipynb](Data%20Jobs\5_Optimal_Skills.ipynb)
+Notebook for detailed steps: [5_Optimal_Skills.ipynb](Data%20Jobs/5_Optimal_Skills.ipynb)
 
 *Analysis is done for data in MY and SG
 
@@ -156,7 +186,6 @@ sns.scatterplot(
 sns.despine()
 sns.set_theme(style='ticks')
 
-# Prepare texts for adjustText
 texts = []
 for i, txt in enumerate(df_da_skills_high_demand.index):
     texts.append(plt.text(df_da_skills_high_demand['skill_percent'].iloc[i], df_da_skills_high_demand['median_salary'].iloc[i], txt))
@@ -177,9 +206,14 @@ ax.xaxis.set_major_formatter(PercentFormatter(decimals=0))
 
 plt.tight_layout()
 ```
-![Visualization of Optimal Skills](Data%20Jobs\Image\Optimal_Skills.png)
+![Visualization of Optimal Skills](Data%20Jobs/Image/Optimal_Skills.png)
 
-# Insights
+### Insights:
+- The scatter plot shows that most of the `programming` skills (colored blue) tend to cluster at higher salary levels compared to other categories, indicating that programming expertise might offer greater salary benefits within the data analytics field.
+- The database skills (colored orange), such as Oracle and SQL Server, are associated with some of the highest salaries among data analyst tools. This indicates a significant demand and valuation for data management and manipulation expertise in the industry.
+- Analyst tools (colored green), including Tableau and Power BI, are prevalent in job postings and offer competitive salaries, showing that visualization and data analysis software are crucial for current data roles. This category not only has good salaries but is also versatile across different types of data tasks.
+
+# Conclusion
 - **Skill Demand and Salary Correlation**: There is a clear correlation between the demand for specific skills and the salaries these skills command. Advanced and specialized skills like Python and Oracle often lead to higher salaries.
 - **Market Trends**: There are changing trends in skill demand, highlighting the dynamic nature of the data job market. Keeping up with these trends is essential for career growth in data analytics.
 - **Economic Value of Skills**: Understanding which skills are both in-demand and well-compensated can guide data analysts in prioritizing learning to maximize their economic returns.
