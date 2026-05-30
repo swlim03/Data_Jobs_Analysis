@@ -14,7 +14,7 @@ https://youtu.be/wUSDVGivd-8?si=-igaKpvzQgcEqxU1
 4. What is the most optimal skill to learn for Data Analyst? (High Demand AND High Paying)
 
 # Tools Used
-- **Python**
+- **Python**  
     Python Libraries used: Pandas, Matplotlib, Seaborn
 - **Jupyter Notebooks**
 - **Visual Studio Code**
