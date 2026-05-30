@@ -7,7 +7,7 @@ The project idea and dataset source were based on and inspired by a tutorial vid
 Project inspiration/tutorial:
 https://youtu.be/wUSDVGivd-8?si=-igaKpvzQgcEqxU1
 
-# Objectives of Project
+# Questions
 1. What are the most demanded skills for Top 3 Data Roles?  
 2. How are in-demand skills trending for Data Analyst?  
 3. How well do jobs and skills pay for Data Analyst?  
