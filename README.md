@@ -246,7 +246,7 @@ plt.tight_layout()
 
 #### Insights:
 - Programming skills (blue), SQL and Python, appear in the largest portion of job postings, highlighting their strong demand among Data Analyst roles in Malaysia and Singapore.
-- Library skills (green), such as Spark, command some of the highest median salaries (around $130K) despite being required in a relatively small proportion of postings (around 15%).
+- Library skills (green), such as Spark, command some of the highest median salaries (~$130K) despite being required in a relatively small proportion of postings (~15%).
 - Analytical tools (orange), including Excel and Tableau, offer a balance between market demand and salary levels for Data Analysts.
 
 # Conclusion
