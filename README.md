@@ -28,7 +28,7 @@ To focus the analysis on the Malaysia job market, the dataset is filtered to inc
 ## Exploratory Data Analysis
 Notebook for detailed steps: [1_EDA.ipynb](Data_Jobs/1_EDA.ipynb)
 
-Number of Data Roles Globally
+### Number of Data Roles Globally
 ```python
 df_plot = df['job_title_short'].value_counts().to_frame()
 
@@ -42,7 +42,7 @@ plt.ylabel('')
 ```
 ![Global Data Jobs Diagram](Data_Jobs/Image/Roles_Count_Global.png)
 
-Number of Data Roles in Malaysia
+### Number of Data Roles in Malaysia
 ```python
 df_plot_my = df_my['job_title_short'].value_counts().to_frame()
 
@@ -56,14 +56,14 @@ plt.ylabel('')
 ```
 ![Visualization of Top Data Roles in Malaysia](Data_Jobs/Image/Roles_Count_MY.png)
 
-### Insights:
-#### Global
+#### Insights:
+##### Global
 Data Analyst has the highest demand globally (~200k postings), followed by Data Scientist (~180k) and Data Engineer (~175k). These three roles dominate the market, while most remaining data-related positions record fewer than 50k postings.
 
-#### Malaysia
+##### Malaysia
 Malaysia shows a similar pattern, with Data Analyst leading (~2.5k postings), followed by Data Scientist (~1.6k), Data Engineer (~1.5k), and Business Analyst (~1.4k). Most other roles remain below 500 postings, suggesting a more concentrated demand around analytical and business-focused functions.
 
-Data Jobs Monthly Trends
+### Data Jobs Monthly Trends
 ```python
 plt.figure(figsize=(6, 3)) 
 sns.set_theme(style='ticks')
@@ -77,10 +77,10 @@ plt.ylabel('Count')
 ```
 ![Data Jobs over Month](Data_Jobs/Image/Job_Trend_Month.png)
 
-### Insights:
+#### Insights:
 The trend is highly volatile as job postings drop sharply after January, recover gradually with fluctuations, and peak again in August. This is followed by a significant dip in September–October (lowest period), before a partial recovery toward November–December, suggesting possible mid-year hiring cycles and end-year slowdown.
 
-Companies with Most Data Roles in Malaysia
+### Companies with Most Data Roles in Malaysia
 ```python
 df_plot_company_my = df_my['company_name'].value_counts().to_frame().head(20)
 
