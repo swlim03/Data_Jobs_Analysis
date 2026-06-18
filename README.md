@@ -56,6 +56,13 @@ plt.ylabel('')
 ```
 ![Visualization of Top Data Roles in Malaysia](Data_Jobs/Image/Roles_Count_MY.png)
 
+### Insights:
+#### Global
+Data Analyst has the highest demand globally (~200k postings), followed by Data Scientist (~180k) and Data Engineer (~175k). These three roles dominate the market, while most remaining data-related positions record fewer than 50k postings.
+
+#### Malaysia
+Malaysia shows a similar pattern, with Data Analyst leading (~2.5k postings), followed by Data Scientist (~1.6k), Data Engineer (~1.5k), and Business Analyst (~1.4k). Most other roles remain below 500 postings, suggesting a more concentrated demand around analytical and business-focused functions.
+
 Data Jobs Monthly Trends
 ```python
 plt.figure(figsize=(6, 3)) 
@@ -69,6 +76,9 @@ plt.xlabel('')
 plt.ylabel('Count')
 ```
 ![Data Jobs over Month](Data_Jobs/Image/Job_Trend_Month.png)
+
+### Insights:
+The trend is highly volatile as job postings drop sharply after January, recover gradually with fluctuations, and peak again in August. This is followed by a significant dip in September–October (lowest period), before a partial recovery toward November–December, suggesting possible mid-year hiring cycles and end-year slowdown.
 
 Companies with Most Data Roles in Malaysia
 ```python
@@ -85,6 +95,8 @@ sns.despine()
 ![Visualization of Top Companies for Data Roles in Malaysia](Data_Jobs/Image/Companies_Malaysia.png)
 
 ## 1. What are the most demanded skills for Top 3 Data Roles?
+The top five skills with the highest relative frequency were extracted for Data Analyst, Data Engineer, and Data Scientist roles to identify dominant skill patterns and cross-role differences.
+
 Notebook for detailed steps: [2_Skill_Demand.ipynb](Data_Jobs/2_Skill_Demand.ipynb)
 
 Top Skills for Data Roles in Malaysia
