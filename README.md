@@ -95,11 +95,10 @@ sns.despine()
 ![Visualization of Top Companies for Data Roles in Malaysia](Data_Jobs/Image/Companies_Malaysia.png)
 
 ## 1. What are the most demanded skills for Top 3 Data Roles?
-The top five skills with the highest relative frequency were extracted for Data Analyst, Data Engineer, and Data Scientist roles to identify dominant skill patterns and cross-role differences.
 
 Notebook for detailed steps: [2_Skill_Demand.ipynb](Data_Jobs/2_Skill_Demand.ipynb)
 
-Top Skills for Data Roles in Malaysia
+### Top Skills for Data Roles in Malaysia
 ```python
 fig,ax = plt.subplots(len(top3_job_titles), 1)
 
@@ -125,7 +124,7 @@ fig.tight_layout(h_pad=0.8)
 ```
 ![Visualization of Top Skills MY](Data_Jobs/Image/TopRoles_Skills_Percent.png)
 
-### Insights:
+#### Insights:
 - SQL is the most requested skill for Data Analysts and Data Engineers, appearing in around half of the job postings. For Data Scientists, SQL is the second sought-after skill.
 - Data Engineers require cloud computing and data processing skills (e.g. Azure, AWS, and Spark), whereas Data Analysts and Data Scientists are more expected to have analytical and visualization tools (e.g. Excel, Tableau, Power BI, R, and SAS).
 - Python is highly demanded across all three roles.
@@ -133,7 +132,7 @@ fig.tight_layout(h_pad=0.8)
 ## 2. How are in-demand skills trending for Data Analyst?
 Notebook for detailed steps: [3_Skill_Trend.ipynb](Data_Jobs/3_Skill_Trend.ipynb)
 
-In-demand Skills Trend by Month 
+### In-demand Skills Trend by Month 
 ```python
 df_plot = df_da_my_percent.iloc[:, :5]
 sns.lineplot(data=df_plot, dashes=False, legend='full', palette='tab10')
@@ -152,7 +151,7 @@ for i in range(5):
 ```
 ![Visualization of Skills Trend](Data_Jobs/Image/Skills_Trend_Month.png)
 
-### Insights:
+#### Insights:
 - SQL consistently dominated throughout 2023, peaking mid-year.
 - Excel and Python showed relatively stable demand with minor fluctuations, remaining essential skills for data analysts.
 
@@ -161,7 +160,7 @@ Notebook for detailed steps: [4_Salary_Analysis.ipynb](Data_Jobs/4_Salary_Analys
 
 *Analysis is done for data in MY and SG
 
-Salary of Top 5 Data Roles in Malaysia & Singapore
+### Salary of Top 5 Data Roles in Malaysia & Singapore
 ```python
 sns.boxplot(data=df_top5_my_sg, x='salary_year_avg', y='job_title_short', order=job_order_my_sg)
 sns.set_theme(style='ticks')
@@ -176,7 +175,7 @@ plt.gca().xaxis.set_major_formatter(ticks_x)
 ```
 ![Visualization of Salary Distribution](Data_Jobs/Image/Salary_Boxplot.png)
 
-Top Paid Skills and In-demand Skills Pay
+### Top Paid Skills and In-demand Skills Pay
 ```python
 fig, ax = plt.subplots(2, 1)  
 
@@ -204,13 +203,13 @@ plt.tight_layout()
 ```
 ![Visualization of Skills and Pay](Data_Jobs/Image/Skills_Pay.png)
 
-### Insights:
+#### Insights:
 - The highest-paid and most in-demand skills for data analysts in Malaysia and Singapore are closely aligned, with Spark, Flow, and AWS appearing in both categories. This suggests that equipping these tools or skills can enhance both earning potential and job opportunities.
 
 ## 4. What is the most optimal skill to learn for Data Analyst? (High Demand AND High Paying)
 Notebook for detailed steps: [5_Optimal_Skills.ipynb](Data_Jobs/5_Optimal_Skills.ipynb)
 
-Skill by Salary and Data Analyst Roles Percentage
+### Skill by Salary and Data Analyst Roles Percentage
 
 ```python
 sns.scatterplot(
@@ -245,7 +244,7 @@ plt.tight_layout()
 ```
 ![Visualization of Optimal Skills](Data_Jobs/Image/Optimal_Skills.png)
 
-### Insights:
+#### Insights:
 - Programming skills (blue), SQL and Python, appear in the largest portion of job postings, highlighting their strong demand among Data Analyst roles in Malaysia and Singapore.
 - Library skills (green), such as Spark, command some of the highest median salaries (around $130K) despite being required in a relatively small proportion of postings (around 15%).
 - Analytical tools (orange), including Excel and Tableau, offer a balance between market demand and salary levels for Data Analysts.
