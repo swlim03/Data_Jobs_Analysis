@@ -1,8 +1,8 @@
 # Overview
 
-This project is a Python data analysis project focused on data-related job roles, particularly analyzing trends in job postings, in-demand skills, and salary trends across different data roles.
+This project is a Python data analysis study on data-related job roles, focusing on trends in job postings, skill demand, and salary distribution across different roles.
 
-The project idea and dataset source were based on and inspired by a tutorial video, which I followed as a way to revise and strengthen my Python data analysis and visualization skills while building a portfolio project.
+It was developed using a publicly available dataset and guided by a tutorial, as a practice project to reinforce Python data analysis and visualization skills for portfolio development.
 
 Project inspiration/tutorial:
 https://youtu.be/wUSDVGivd-8?si=-igaKpvzQgcEqxU1
@@ -22,7 +22,7 @@ https://youtu.be/wUSDVGivd-8?si=-igaKpvzQgcEqxU1
 
 # Data Preparation and Cleanup
 ## Filter MY and SG Jobs
-To focus the analysis on the Malaysia job market, the dataset is filtered to include only roles based in Malaysia. However, due to the limited number of Data Analyst job postings in Malaysia for certain analyses and visualizations, Singapore data is also included.
+To focus on the Malaysia job market, the dataset was filtered to Malaysia-based roles. Due to limited Data Analyst postings in Malaysia for certain analyses, Singapore job postings were also included to improve data coverage and support more robust analysis.
 
 # The Analysis
 ## Exploratory Data Analysis
